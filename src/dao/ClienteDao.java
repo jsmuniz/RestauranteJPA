@@ -143,6 +143,47 @@ public class ClienteDao {
         }
         return clientes;
     }
+    
+    
+    /**
+     * Método que busca todos do banco de dados.
+     *
+     * @return List<Contato>
+     */
+    @SuppressWarnings("unchecked")
+    public List<Cliente> todosClientesComDDD(String ddd) {
+        EntityManager manager = getEntityManager();
+        List<Cliente> clientes = new ArrayList<>();
+        try {
+            Query q = manager.createQuery("Select a from Cliente a where a.telefone like :parametro");
+            q.setParameter("parametro", "("+ddd+")%");
+            clientes = (List<Cliente>) q.getResultList();
+        } finally {
+            manager.close();
+        }
+        return clientes;
+    }
+    
+    
+    
+    /**
+     * Método que busca todos do banco de dados.
+     *
+     * @return List<Contato>
+     */
+    @SuppressWarnings("unchecked")
+    public List<Cliente> todosComDDD(String ddd) {
+        EntityManager manager = getEntityManager();
+        List<Cliente> clientes = new ArrayList<>();
+        try {
+            Query query = manager.createQuery("Select a from Cliente a where a.telefone like :param ");
+            query.setParameter("param", "("+ddd+")%");
+            clientes = (List<Cliente>) query.getResultList();
+        } finally {
+            manager.close();
+        }
+        return clientes;
+    }
 
     /**
      * Método pesq que busca todos do banco de dados usa-se uma query.

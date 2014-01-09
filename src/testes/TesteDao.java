@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package testes;
 
 import logic.PedidoLogic;
@@ -30,6 +25,7 @@ public class TesteDao {
 
     public static void main(String[] args) {
 
+        
         /*
          //SALVAR MESA
          Mesa mesa = new Mesa();
@@ -59,9 +55,9 @@ public class TesteDao {
          item.setDescricao("Bebida");
         
          itemDao.salvar(item);
-         */
+         
         
-        /*
+        
          //SALVAR PEDIDO
          Pedido pedido = new Pedido();
          Pedido pedido2 = new Pedido();
@@ -112,7 +108,7 @@ public class TesteDao {
          
          
         /*
-         //TESTE getPedidoItemCollection()
+         //getPedidoItemCollection()
          PedidoDao pedidoDao = new PedidoDao();
          Pedido pedido = pedidoDao.pesquisarPorId(2);
          Collection<PedidoItem> pedidoitem = pedido.getPedidoItemCollection();
@@ -132,10 +128,10 @@ public class TesteDao {
         */
          
         /*
-         //TESTE PAGAR e PEDIR NOTA
+         //PAGAR e PEDIR NOTA
        
          PedidoDao pedidoDao = new PedidoDao();
-         Pedido pedido = pedidoDao.pesquisarPorId(1);
+         Pedido pedido = pedidoDao.pesquisarPorId(2);
          PedidoLogic ped = new PedidoLogic();
         
     
@@ -149,7 +145,7 @@ public class TesteDao {
          */
         
         /*
-         //TESTE RECEITA TOTAL
+         //RECEITA TOTAL
          Date dtInic = new Date();
          dtInic.setDate(1);
          dtInic.setMonth(0);
@@ -163,6 +159,12 @@ public class TesteDao {
          Restaurante restaurante = new Restaurante();
          System.out.println("Receita: R$ " + restaurante.recTotal(dtInic, dtFim));
          */
+        
+        /*
+        //UTILIZAÇÃO DE HQL
+        List<Cliente> lista = new ClienteDao().todosClientesComDDD("32");
+        System.out.println("oi");
+        */
     }
 
 }
