@@ -26,14 +26,13 @@ public class TesteDao {
     public static void main(String[] args) {
 
         
-        /*
+        
          //SALVAR MESA
          Mesa mesa = new Mesa();
          MesaDao mesaDao = new MesaDao();
         
          mesaDao.salvar(mesa);
-         */
-        
+         
         /*
          //SALVAR CLIENTE
          Cliente cliente = new Cliente();
